@@ -14,25 +14,140 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #282c34; /* Dark background for the header */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: white; /* Text color */
 }
 
 .App-link {
-  color: #61dafb;
+  color: #61dafb; /* Link color */
 }
+
+/* App.css */
+.neon-text {
+  color: #fff;
+  text-shadow: 
+    0 0 3px #fff,
+    0 0 6px #8352FD,
+    0 0 10px #8352FD; /* Reduced neon glow */
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.neon-logo {
+  box-shadow: 0px 0px 10px rgba(131, 82, 253, 0.5); /* Logo glow */
+}
+
+.neon-team-member {
+  box-shadow: 0px 0px 15px rgba(131, 82, 253, 0.4); /* Team member glow */
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Modern font */
+  background-color: #1a1a1a; /* Dark background */
+}
+
+.octagon {
+  width: 150px;
+  height: 150px;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.octagon-text {
+  color: #fff; /* Ensure text is visible */
+  text-align: center;
+  margin: 0; /* Reset margin for octagon text */
+}
+
+.octagon:hover {
+  transform: scale(1.1); /* Scale effect on hover */
+  box-shadow: 0 0 15px rgba(131, 82, 253, 0.7); /* Glow effect on hover */
+}
+
+.neon-border {
+  border: 2px solid #0f0; /* Green border for neon effect */
+  box-shadow: 0 0 10px #0f0; /* Glow around border */
+}
+
+.roadmap-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px; /* Space between roadmap items */
+  margin: 20px 0; /* Margin for roadmap section */
+  flex-wrap: wrap; /* Wrap items for responsiveness */
+}
+
+.roadmap-item {
+  width: 150px; /* Width of each roadmap item */
+  height: 150px; /* Height of each roadmap item */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content */
+  background: rgba(0, 0, 255, 0.6); /* Semi-transparent background */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth scale effect */
+}
+
+.roadmap-item:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 0 15px rgba(131, 82, 253, 0.7); /* Glow effect on hover */
+}
+
+.dragon {
+  transition: bottom 0.5s ease;
+}
+
+.jump {
+  animation: jump 0.5s ease forwards;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px; /* Adjust for jump height */
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.game-container {
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+#dragon.jump {
+  animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+  0% { bottom: 0; }
+  50% { bottom: 50px; }
+  100% { bottom: 0; }
+}
+
+@keyframes move {
+  0% { right: -50px; }
+  100% { right: 100%; }
+}
+
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Initial rotation */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Complete rotation */
   }
 }
